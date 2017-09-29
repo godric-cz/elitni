@@ -1,20 +1,44 @@
 <?php
 
-class Uzivatel {
+class Uzivatel extends DbObject {
 
-    private function aktivity() {
+    private $aktivity;
 
+    protected static $tabulka = 'uzivatel';
+
+    private function aktivity(): array {
+        if(!$this->aktivity) {
+            $q = $this->db->query('SELECT GROUP_CONCAT(aktivita_id) FROM prihlasen WHERE uzivatel_id = ?', $this->id());
+            $ids = mysqli_fetch_row($q)[0];
+            $this->aktivity = Aktivita::zIds($ids);
+        }
+        return $this->aktivity;
     }
 
-    function maVolnoNa(Aktivita $a) {
+    function maVolnoNa(Aktivita $a): bool {
         foreach($this->aktivity() as $stavajiciAktivita) {
             if($stavajiciAktivita->kryjeSe($a)) return false;
+        }
+        foreach($this->organizovaneAktivity() as $organizovanaAktivita) {
+            if($organizovanaAktivita->kryjeSe($a)) return false;
         }
         return true;
     }
 
-    static function zMailu(string $mail) {
+    private function organizovaneAktivity(): array {
+        throw new Neimplementovano;
+    }
 
+    function pohlavi(): string {
+        return $this->r['pohlavi'];
+    }
+
+    function prihlasenNa(Aktivita $a): bool {
+        return in_array($a, $this->aktivity()); // TODO objekt aktivita bude mít asi dvě identity, nějak pořešit
+    }
+
+    static function zMailu(string $mail): ?Uzivatel {
+        return self::zWhereRadek('mail = ?', $mail);
     }
 
 }

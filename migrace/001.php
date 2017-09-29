@@ -41,4 +41,11 @@ CREATE TABLE `prihlasen_log` (
   FOREIGN KEY (`aktivita_id`) REFERENCES `aktivita` (`id`)
 );
 
+CREATE TABLE `organizuje` (
+  `aktivita_id` int(11) NOT NULL,
+  `uzivatel_id` int(11) NOT NULL,
+  FOREIGN KEY (`aktivita_id`) REFERENCES `aktivita` (`id`),
+  FOREIGN KEY (`uzivatel_id`) REFERENCES `uzivatel` (`id`)
+);
+
 SQL;
