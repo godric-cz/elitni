@@ -4,6 +4,7 @@ ini_set('display_errors', true);
 spl_autoload_register(function($trida) {
     require __DIR__ . '/src/' . $trida . '.php';
 });
+require 'src/funkce.php';
 DbObject::$sdb = new Db;
 
 /**
@@ -12,12 +13,22 @@ DbObject::$sdb = new Db;
 
 $u = Uzivatel::zMailu('godric@korh.cz');
 
+if(post('prihlasit')) {
+    Aktivita::zId(post('prihlasit'))->prihlas($u);
+    back();
+}
+
 foreach(Aktivita::zVsech() as $a) {
     echo $a->nazev() . '<br>';
     if($u && $u->prihlasenNa($a)) {
         echo 'přihlášeno – odhlásit';
     } else if($u && $a->volnoPro($u)) {
-        echo 'přihlásit';
+        echo '
+            <form method="post">
+                <input type="hidden" name="prihlasit" value="' . $a->id() . '">
+                <input type="submit" value="přihlásit">
+            </form>
+        ';
     }
     echo '<br><br>';
 }

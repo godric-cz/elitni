@@ -2,6 +2,9 @@
 
 class Aktivita extends DbObject {
 
+    private $konec;
+    private $zacatek;
+
     protected static $tabulka = 'aktivita';
 
     protected static function dotaz($where): string {
@@ -18,6 +21,13 @@ class Aktivita extends DbObject {
         ";
     }
 
+    function konec(): DateTimeImmutable {
+        if(!$this->konec) {
+            $this->konec = new DateTimeImmutable($this->r['konec']);
+        }
+        return $this->konec;
+    }
+
     function kryjeSe(Aktivita $a): bool {
         return !(
             $a->konec() <= $this->zacatek() ||
@@ -32,7 +42,12 @@ class Aktivita extends DbObject {
     function prihlas(Uzivatel $u): void {
         if(!$this->volnoPro($u))    throw new Plno;
         if(!$u->maVolnoNa($this))   throw new PrekrytiAktivit;
-        throw new Neimplementovano;
+
+        $this->db->query(
+            'INSERT INTO prihlasen(uzivatel_id, aktivita_id) VALUES (?, ?)',
+            $u->id(),
+            $this->id()
+        );
     }
 
     function volnoPro(Uzivatel $u): bool {
@@ -44,12 +59,19 @@ class Aktivita extends DbObject {
 
         if($m + $f >= $ku + $km + $kf)
             return false; // beznadějně plno
-        if($u->pohlavi() == 'f' && $m >= $ku + $km)
+        if($u->pohlavi() == 'm' && $m >= $ku + $km)
             return false; // muži zabrali všechna univerzální i mužská místa
-        if($u->pohlavi() == 'm' && $f >= $ku + $kf)
+        if($u->pohlavi() == 'f' && $f >= $ku + $kf)
             return false; // ženy zabraly všechna univerzální i ženská místa
 
         return true; // je volno a žádné pohlaví nevyžralo limit míst
+    }
+
+    function zacatek(): DateTimeImmutable {
+        if(!$this->zacatek) {
+            $this->zacatek = new DateTimeImmutable($this->r['zacatek']);
+        }
+        return $this->zacatek;
     }
 
 }

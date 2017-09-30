@@ -36,7 +36,7 @@ abstract class DbObject {
 
     /** Načte a vrátí objekt s daným ID nebo null */
     static function zId($id) {
-        return self::zWhereRadek(static::$pk.' = '.dbQv($id));
+        return self::zWhereRadek(static::$tabulka.'.'.static::$pk.' = '.self::$sdb->escape($id));
     }
 
     /**
@@ -46,9 +46,9 @@ abstract class DbObject {
     static function zIds($ids) {
         if(is_array($ids)) {
             if(empty($ids)) return []; // vůbec se nedotazovat DB
-            return self::zWhere(static::$pk.' IN ('.dbQa($ids).')');
+            return self::zWhere(static::$tabulka.'.'.static::$pk.' IN ('.dbQa($ids).')');
         } else if(preg_match('@^([0-9]+,)*[0-9]+$@', $ids)) {
-            return self::zWhere(static::$pk.' IN ('.$ids.')');
+            return self::zWhere(static::$tabulka.'.'.static::$pk.' IN ('.$ids.')');
         } else if($ids === '') {
             return [];
         } else if($ids === null) {

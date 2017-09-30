@@ -11,6 +11,13 @@ class Db {
         );
     }
 
+    function escape($value) {
+        if(is_int($value))
+            return $value;
+        else
+            return "'" . $this->connection->real_escape_string($value) . "'";
+    }
+
     function query(string $query, ...$params) {
         foreach($params as $p) {
             $pos = strpos($query, '?');

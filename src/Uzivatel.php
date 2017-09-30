@@ -3,12 +3,16 @@
 class Uzivatel extends DbObject {
 
     private $aktivity;
+    private $organizovaneAktivity;
 
     protected static $tabulka = 'uzivatel';
 
     private function aktivity(): array {
         if(!$this->aktivity) {
-            $q = $this->db->query('SELECT GROUP_CONCAT(aktivita_id) FROM prihlasen WHERE uzivatel_id = ?', $this->id());
+            $q = $this->db->query(
+                'SELECT GROUP_CONCAT(aktivita_id) FROM prihlasen WHERE uzivatel_id = ?',
+                $this->id()
+            );
             $ids = mysqli_fetch_row($q)[0];
             $this->aktivity = Aktivita::zIds($ids);
         }
@@ -26,7 +30,15 @@ class Uzivatel extends DbObject {
     }
 
     private function organizovaneAktivity(): array {
-        throw new Neimplementovano;
+        if(!$this->organizovaneAktivity) {
+            $q = $this->db->query(
+                'SELECT GROUP_CONCAT(aktivita_id) FROM organizuje WHERE aktivita_id = ?',
+                $this->id()
+            );
+            $ids = mysqli_fetch_row($q)[0];
+            $this->organizovaneAktivity = Aktivita::zIds($ids);
+        }
+        return $this->organizovaneAktivity;
     }
 
     function pohlavi(): string {
