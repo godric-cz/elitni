@@ -32,7 +32,7 @@ class Uzivatel extends DbObject {
     private function organizovaneAktivity(): array {
         if(!$this->organizovaneAktivity) {
             $q = $this->db->query(
-                'SELECT GROUP_CONCAT(aktivita_id) FROM organizuje WHERE aktivita_id = ?',
+                'SELECT GROUP_CONCAT(aktivita_id) FROM organizuje WHERE uzivatel_id = ?',
                 $this->id()
             );
             $ids = mysqli_fetch_row($q)[0];
