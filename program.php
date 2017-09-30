@@ -41,5 +41,5 @@ foreach(Aktivita::zVsech() as $a) {
             </form>
         ';
     }
-    echo '<br><br>';
+    echo '<br>';
 }

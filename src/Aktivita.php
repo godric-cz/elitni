@@ -46,7 +46,13 @@ class Aktivita extends DbObject {
             $this->id()
         );
 
-        // TODO logování
+        // logování
+        $this->db->query(
+            'INSERT INTO prihlasen_log(ip, aktivita_id, uzivatel_id, operace) VALUES (?, ?, ?, "o")',
+            $_SERVER['REMOTE_ADDR'],
+            $this->id(),
+            $u->id()
+        );
     }
 
     function prihlas(Uzivatel $u): void {
@@ -59,7 +65,13 @@ class Aktivita extends DbObject {
             $this->id()
         );
 
-        // TODO logování
+        // logování
+        $this->db->query(
+            'INSERT INTO prihlasen_log(ip, aktivita_id, uzivatel_id, operace) VALUES (?, ?, ?, "p")',
+            $_SERVER['REMOTE_ADDR'],
+            $this->id(),
+            $u->id()
+        );
     }
 
     function volnoPro(Uzivatel $u): bool {
