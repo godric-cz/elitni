@@ -30,6 +30,10 @@ CREATE TABLE `prihlasen` (
   FOREIGN KEY (`uzivatel_id`) REFERENCES `uzivatel` (`id`)
 );
 
+ALTER TABLE `prihlasen`
+ADD PRIMARY KEY `aktivita_id_uzivatel_id` (`aktivita_id`, `uzivatel_id`),
+DROP INDEX `aktivita_id`;
+
 CREATE TABLE `prihlasen_log` (
   `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cas` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
