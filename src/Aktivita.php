@@ -39,6 +39,16 @@ class Aktivita extends DbObject {
         return $this->r['nazev'];
     }
 
+    function odhlas(Uzivatel $u): void {
+        $this->db->query(
+            'DELETE FROM prihlasen WHERE uzivatel_id = ? AND aktivita_id = ?',
+            $u->id(),
+            $this->id()
+        );
+
+        // TODO logování
+    }
+
     function prihlas(Uzivatel $u): void {
         if(!$this->volnoPro($u))    throw new Plno;
         if(!$u->maVolnoNa($this))   throw new PrekrytiAktivit;
@@ -48,6 +58,8 @@ class Aktivita extends DbObject {
             $u->id(),
             $this->id()
         );
+
+        // TODO logování
     }
 
     function volnoPro(Uzivatel $u): bool {

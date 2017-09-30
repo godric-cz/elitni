@@ -18,10 +18,21 @@ if(post('prihlasit')) {
     back();
 }
 
+if(post('odhlasit')) {
+    Aktivita::zId(post('odhlasit'))->odhlas($u);
+    back();
+}
+
 foreach(Aktivita::zVsech() as $a) {
     echo $a->nazev() . '<br>';
     if($u && $u->prihlasenNa($a)) {
-        echo 'přihlášeno – odhlásit';
+        echo '
+            <form method="post">
+                přihlášeno –
+                <input type="hidden" name="odhlasit" value="' . $a->id() . '">
+                <input type="submit" value="odhlásit">
+            </form>
+        ';
     } else if($u && $a->volnoPro($u)) {
         echo '
             <form method="post">
