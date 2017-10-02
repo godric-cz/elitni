@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# TODO povolit jen vstupy do ./soubory, jinak zakázat
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* index.php?stranka=$0

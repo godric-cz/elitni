@@ -1,11 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', true);
-spl_autoload_register(function($trida) {
-    require __DIR__ . '/src/' . $trida . '.php';
-});
-require 'src/funkce.php';
-DbObject::$sdb = new Db;
 
 /**
  * Test výpisu aktivit s přihlašováním a odhlašováním
@@ -33,6 +26,8 @@ foreach(Aktivita::zVsech() as $a) {
                 <input type="submit" value="odhlásit">
             </form>
         ';
+    } else if($u && $u->organizuje($a)) {
+        echo 'organizátor<br><br>';
     } else if($u && $a->volnoPro($u)) {
         echo '
             <form method="post">

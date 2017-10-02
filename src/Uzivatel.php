@@ -41,6 +41,10 @@ class Uzivatel extends DbObject {
         return $this->organizovaneAktivity;
     }
 
+    function organizuje(Aktivita $a): bool {
+        return in_array($a, $this->organizovaneAktivity());
+    }
+
     function pohlavi(): string {
         return $this->r['pohlavi'];
     }
