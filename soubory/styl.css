@@ -1,0 +1,32 @@
+
+@font-face { font-family: 'amsans'; src: url('AMSANSL.otf'); }
+@font-face { font-family: 'amsans'; src: url('AMSANSR.otf'); font-weight: bold; }
+
+body { margin: 0; font-family: amsans, sans-serif; color: #c5b178; font-size: 20px; }
+
+a { text-decoration: none; color: inherit; }
+a:hover { text-decoration: underline; }
+
+em { color: #ffffff; font-style: normal; }
+
+.logopruh { height: 150px; background-color: #333333; text-align: center; overflow: hidden;   }
+.menu { background-color: #c5b178; color: #333333; text-align: center; }
+.paticka_vnitrni { height: 150px; background-color: #333333; }
+.box1 { background-color: rgba(50, 50, 50, 0.8); padding: 10px; max-width: 960px; margin: 0 auto 100px auto; }
+.box1 > div { border: solid 2px #c5b178; padding: 20px 80px 20px 40px; }
+
+@media (max-width: 480px) {
+    .logopruh > img { height: 90px; margin-top: 30px; }
+    .box1 > div { padding: 0 10px; }
+}
+
+.menu > a { display: inline-block; color: #333; text-decoration: none; font-weight: bold; margin: 10px 20px; font-size: 18px; line-height: 26px; }
+.menu > a:hover { border-top: solid 2px #333; border-bottom: solid 2px #333; margin: 6px 20px; }
+
+.pruh { background-color: #333333; overflow: hidden; }
+.pruh > .obsah { max-width: 1200px; margin: 80px auto; padding: 0 10px; }
+.pruh h2 { color: #ffffff; text-align: center; font-weight: bold; font-size: 40px; }
+
+.highlight { max-width: 940px; text-align: center; margin-left: auto; margin-right: auto; color: #ffffff; margin: 50px auto; }
+
+.zlata { color: #c5b178; }
