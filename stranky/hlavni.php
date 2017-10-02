@@ -39,9 +39,7 @@
 
 <div class="pruh">
     <div class="obsah">
-        <h2>Přihlašování</h2>
-        <p class="highlight">Registrujte se snadno a rychle ve dvou jednoduchých krocích: vyplnění formuláře a poté výběr konkrétních her formou časové soutěže (10. a 17. října).</p>
-        <p>Žádáme všechny hosty, aby se laskavě nejdříve registrovali vyplněním tohoto krátkého dotazníku, který je nezbytným předpokladem pro přihlašování na konkrétní hry. <em>10. října v 21:00</em> bude spuštěna první vlna přihlašování na larpy, půjde o časovou soutěž. Tuto metodu jsme zvolili na základě pečlivé analýzy výskytu mrvobití v larpové komunitě a vyhodnotili ji jako nejvíce elitní ze všech dostupných. Prosím, věnujte pozornost výjimce v přihlašování u larpů <em>Bucanero</em> a <em>Rocker</em>. V této první vlně bude možné přihlásit si pouze dva larpy. Druhá vlna bude spuštěna <em>17. října v 21:00.</em> Účast v časové soutěži při přihlašování her v obou vlnách bude možná po vyplnění vaší e-mailové adresy, kterou jste uvedli v dříve vyplněném formuláři. Ano, ryze teoreticky by bylo možné využít jistých mezer v tomto systému, zadávat cizí adresy apod., nicméně jsme se pro tento postup rozhodli proto, že takovéto chování mívá ve zvyku pouze larpová spodina, která není cílovou skupinou tohoto festivalu.</p>
+        <?php include 'casti/prihlaska-text.html' ?>
         <p class="highlight"><a href="prihlaska">K formuláři ZDE</a></p>
     </div>
 </div>

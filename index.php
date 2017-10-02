@@ -9,15 +9,14 @@ $povoleneVUrl = '/^[a-z]+$/';
 $stranka = null;
 
 if($_GET['stranka'] === '') {
-    $stranka = 'hlavni.html';
+    $stranka = 'hlavni.php';
 } else if($_GET['stranka'] === 'hlavni') {
     $stranka = null;
-} else if(preg_match($povoleneVUrl, $_GET['stranka'])) {
-    if(is_file('stranky/' . $_GET['stranka'] . '.html')) {
-        $stranka = $_GET['stranka'] . '.html';
-    } else if(is_file('stranky/' . $_GET['stranka'] . '.php')) {
-        $stranka = $_GET['stranka'] . '.php';
-    }
+} else if(
+    preg_match($povoleneVUrl, $_GET['stranka']) &&
+    is_file('stranky/' . $_GET['stranka'] . '.php')
+) {
+    $stranka = $_GET['stranka'] . '.php';
 }
 
 if($stranka === null) {
