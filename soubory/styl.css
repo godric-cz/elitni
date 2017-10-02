@@ -20,7 +20,7 @@ em { color: #ffffff; font-style: normal; }
 }
 
 .menu > a { display: inline-block; color: #333; text-decoration: none; font-weight: bold; margin: 10px 20px; font-size: 18px; line-height: 26px; }
-.menu > a:hover { border-top: solid 2px #333; border-bottom: solid 2px #333; margin: 6px 20px; }
+.menu > a:hover { border-top: solid 2px #333; border-bottom: solid 2px #333; margin: 8px 20px; }
 
 .pruh { background-color: #333333; overflow: hidden; }
 .pruh > .obsah { max-width: 1200px; margin: 80px auto; padding: 0 10px; }
@@ -35,3 +35,8 @@ em { color: #ffffff; font-style: normal; }
 .paticka .vlevo { float: left; }
 .paticka .vpravo { float: right; }
 .paticka .vpravo:after { content: " "; display: block; clear: both; height: 80px; }
+
+.box2 { max-width: 1200px; margin: 150px auto; }
+.box2 > div { background-image: url('form-stred.png'); background-size: 100% auto; padding: 50px; }
+.box2:before { content: " "; display: block; background-image: url('form-vrch.png'); height: 100px; background-size: 100% 100%; }
+.box2:after { content: " "; display: block; background-image: url('form-spodek.png'); height: 100px; background-size: 100% 100%; }

@@ -7,6 +7,11 @@
 <div class="pruh">
     <div class="obsah">
         <?php include 'casti/prihlaska-text.html' ?>
-        <p class="highlight">ahoooj</p>
+        <div class="box2">
+            <div>
+                ahooj<br>
+                <input type="text">
+            </div>
+        </div>
     </div>
 </div>
