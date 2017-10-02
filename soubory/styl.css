@@ -9,9 +9,8 @@ a:hover { text-decoration: underline; }
 
 em { color: #ffffff; font-style: normal; }
 
-.logopruh { height: 150px; background-color: #333333; text-align: center; overflow: hidden;   }
+.logopruh { height: 150px; background-color: #333333; text-align: center; overflow: hidden; }
 .menu { background-color: #c5b178; color: #333333; text-align: center; }
-.paticka_vnitrni { height: 150px; background-color: #333333; }
 .box1 { background-color: rgba(50, 50, 50, 0.8); padding: 10px; max-width: 960px; margin: 0 auto 100px auto; }
 .box1 > div { border: solid 2px #c5b178; padding: 20px 80px 20px 40px; }
 
@@ -30,3 +29,9 @@ em { color: #ffffff; font-style: normal; }
 .highlight { max-width: 940px; text-align: center; margin-left: auto; margin-right: auto; color: #ffffff; margin: 50px auto; }
 
 .zlata { color: #c5b178; }
+
+.paticka { color: #ffffff; }
+.paticka a { color: #c5b178; }
+.paticka .vlevo { float: left; }
+.paticka .vpravo { float: right; }
+.paticka .vpravo:after { content: " "; display: block; clear: both; height: 80px; }
