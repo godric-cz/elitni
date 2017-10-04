@@ -9,4 +9,6 @@ spl_autoload_register(function($trida) {
 
 require __DIR__ . '/_funkce.php';
 
-DbObject::$sdb = new Db;
+$db = new Db;
+
+DbObject::$sdb = $db;

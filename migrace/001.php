@@ -5,7 +5,8 @@ $sql = <<<SQL
 CREATE TABLE `uzivatel` (
   `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `mail` varchar(200) NOT NULL,
-  `pohlavi` char(1) NOT NULL COMMENT 'm/f'
+  `pohlavi` char(1) NOT NULL COMMENT 'm/f',
+  `prihlaska` text NOT NULL COMMENT 'json'
 );
 
 ALTER TABLE `uzivatel`

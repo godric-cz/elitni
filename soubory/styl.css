@@ -36,7 +36,16 @@ em { color: #ffffff; font-style: normal; }
 .paticka .vpravo { float: right; }
 .paticka .vpravo:after { content: " "; display: block; clear: both; height: 80px; }
 
-.box2 { max-width: 1200px; margin: 150px auto; }
+.box2 { max-width: 1200px; margin: 150px auto; text-align: center; font-size: 24px; font-weight: bold; }
 .box2 > div { background-image: url('form-stred.png'); background-size: 100% auto; padding: 50px; }
 .box2:before { content: " "; display: block; background-image: url('form-vrch.png'); height: 100px; background-size: 100% 100%; }
 .box2:after { content: " "; display: block; background-image: url('form-spodek.png'); height: 100px; background-size: 100% 100%; }
+.box2 input[type=text] { border: none; border-radius: 100px; padding: 10px 20px; font-family: inherit; font-size: 25px; display: block; margin: 15px auto; width: 400px; /* TODO responsivní */ }
+.box2 .polozka { margin: 50px 0; }
+.box2 .vyber label { display: inline-block; width: 50px; color: #ffffff; margin: 20px 50px 0 50px; cursor: pointer; }
+.box2 .vyber input { display: none; }
+.box2 .vyber input + .pseudoinput { width: 50px; height: 50px; background-color: #ffffff; border-radius: 100px; overflow: hidden; margin-bottom: 5px; }
+.box2 .vyber input:checked + .pseudoinput:before { content: " "; display: block; width: 30px; height: 30px; background-color: #c5b178; border-radius: 100px; margin: 10px; }
+.box2 textarea { display: block; border: none; border-radius: 25px; width: 800px; height: 150px; padding: 20px; /* TODO not resizeable */ margin: 15px auto; font-family: inherit; font-size: 25px; }
+.box2 .odeslat { background-color: #c5b178; padding: 5px; margin: 100px auto; width: 400px; }
+.box2 .odeslat input { display: block; background-color: #c5b178; border: solid #333 2px; width: 100%; padding: 50px 0; font-family: inherit; font-size: 25px; color: #333; cursor: pointer; }

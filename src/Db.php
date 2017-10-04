@@ -9,6 +9,7 @@ class Db {
             '',
             'elitni'
         );
+        $this->query('SET NAMES utf8');
     }
 
     function escape($value) {
