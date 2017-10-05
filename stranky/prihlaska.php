@@ -2,7 +2,11 @@
 
 if(post('prihlasit')) {
 
-    // TODO duplicitní přihlášky?
+    if(Uzivatel::zMailu(post('mail'))) {
+        cookie_flag_push('prihlaska_duplicitni');
+        back();
+    }
+
     // TODO pohlaví
     $polozky = post('polozky');
     $polozky['E-mail'] = post('mail');
@@ -13,17 +17,10 @@ if(post('prihlasit')) {
         json_encode($polozky, JSON_UNESCAPED_UNICODE)
     );
 
-    setcookie('prihlaska_uspech', '1');
+    cookie_flag_push('prihlaska_uspech');
     back();
 
 }
-
-$vyplneno = false;
-if(isset($_COOKIE['prihlaska_uspech'])) {
-    setcookie('prihlaska_uspech', null, 1);
-    $vyplneno = true;
-}
-
 
 ?>
 
@@ -38,7 +35,27 @@ if(isset($_COOKIE['prihlaska_uspech'])) {
 <div class="pruh">
     <div class="obsah">
 
-        <?php if(!$vyplneno) { ?>
+        <?php if(cookie_flag_pop('prihlaska_uspech')) { ?>
+
+        <div class="box2">
+            <div>
+                <div class="polozka">
+                    Děkujeme, Vaši přihlášku jsme obdrželi a přidali Vaše jméno na seznam hostů.
+                </div>
+            </div>
+        </div>
+
+        <?php } else if(cookie_flag_pop('prihlaska_duplicitni')) { ?>
+
+        <div class="box2">
+            <div>
+                <div class="polozka">
+                    Už jste přihlášeni.
+                </div>
+            </div>
+        </div>
+
+        <?php } else { ?>
 
         <?php include 'casti/prihlaska-text.html' ?>
 
@@ -79,16 +96,6 @@ if(isset($_COOKIE['prihlaska_uspech'])) {
                         <input type="submit" name="prihlasit" value="Odeslat přihlášku" onclick="return validuj(this)">
                     </div>
                 </form>
-            </div>
-        </div>
-
-        <?php } else { ?>
-
-        <div class="box2">
-            <div>
-                <div class="polozka">
-                    Děkujeme, Vaši přihlášku jsme obdrželi a přidali Vaše jméno na seznam hostů.
-                </div>
             </div>
         </div>
 
