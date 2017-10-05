@@ -25,8 +25,17 @@ if(post('prihlasit')) {
 
 <script>
     function validuj(e) {
-        // TODO validace
-        return true;
+        if(!mailpole.value) {
+            alert('Vyplňte prosím e-mail.')
+            return false
+        }
+        mailpole.value = mailpole.value.trim()
+        if(mailpole.value.search(/^\S+@\S+\.[a-z]+$/) !== 0) {
+            alert('Zkontrolujte prosím, že e-mailová adresa je správná.')
+            return false
+        }
+        mailpole.value = mailpole.value.toLowerCase()
+        return true
     }
 </script>
 
@@ -72,7 +81,7 @@ if(post('prihlasit')) {
                     </div>
                     <div class="polozka">
                         E-mailová adresa
-                        <input type="text" name="mail">
+                        <input type="text" name="mail" id="mailpole">
                     </div>
                     <div class="polozka vyber">
                         Máte zájem o ubytování z pátku na sobotu?<br>
@@ -105,7 +114,7 @@ if(post('prihlasit')) {
                         <textarea name="polozky[Poznámka]"></textarea>
                     </div>
                     <div class="odeslat">
-                        <input type="submit" name="prihlasit" value="Odeslat přihlášku" onclick="return validuj(this)">
+                        <input type="submit" name="prihlasit" value="Odeslat přihlášku" onclick="return validuj()">
                     </div>
                 </form>
             </div>
