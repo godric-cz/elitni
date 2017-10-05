@@ -7,13 +7,12 @@ if(post('prihlasit')) {
         back();
     }
 
-    // TODO pohlaví
     $polozky = post('polozky');
     $polozky['E-mail'] = post('mail');
     $db->query(
         'INSERT INTO uzivatel(mail, pohlavi, prihlaska) VALUES (?, ?, ?)',
         post('mail'),
-        'm', // TODO
+        post('pohlavi'),
         json_encode($polozky, JSON_UNESCAPED_UNICODE)
     );
 
@@ -86,6 +85,19 @@ if(post('prihlasit')) {
                             <input type="radio" name="polozky[Ubytování]" value="ne">
                             <div class="pseudoinput"></div>
                             Ne
+                        </label>
+                    </div>
+                    <div class="polozka vyber">
+                        Pohlaví<br>
+                        <label>
+                            <input type="radio" name="pohlavi" value="m" checked="true">
+                            <div class="pseudoinput"></div>
+                            Muž
+                        </label>
+                        <label>
+                            <input type="radio" name="pohlavi" value="f">
+                            <div class="pseudoinput"></div>
+                            Žena
                         </label>
                     </div>
                     <div class="polozka">
