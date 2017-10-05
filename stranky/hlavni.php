@@ -1,10 +1,10 @@
 <div class="pruh" style="background-image: url(soubory/hlavni_uvodka.jpg); height: 300px; background-size: auto 400%; background-position: 50% 45%"></div>
 
-<div class="pruh">
+<div class="pruh" id="o-festivalu">
     <div class="obsah">
         <p class="highlight">Exkluzivní zážitek. Pouze hry s hodnocením v červených číslech. Larpový galavečer. V.I.P. hosté. Šampaňské a červený koberec. To nejlepší z české larpové scény na festivalu elitních larpů. V Brně, samozřejmě.</p>
 
-        <p style="text-align: center"><a href="#" class="zlata">více o festivalu…</a></p>
+        <p style="text-align: center" id="viceodstavec"><a href="#" class="zlata" onclick="ukaz_o_festivalu(); return false">více o festivalu…</a></p>
 
         <div style="display:none">
         Festival elitních larpů bojuje se zhoubným vlivem špatných her, které se zejména v poslední době roztahují na české scéně komorních larpů. My jsme řekli ne všem rychlokvaškám z larpworkshopů a podobných pochybných akcí, které zamořují naši komunitu. Přineseme vám pouze ověřené a kvalitní kusy.
@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="pruh" style="background-image: url(soubory/hodinky.jpg); background-size: auto 150%; background-position: bottom;">
+<div class="pruh" style="background-image: url(soubory/hodinky.jpg); background-size: auto 150%; background-position: bottom;" id="prakticke">
     <div class="obsah">
         <h2>Praktické info</h2>
         <div class="box1">
@@ -43,3 +43,14 @@
         <p class="highlight"><a href="prihlaska">K formuláři ZDE</a></p>
     </div>
 </div>
+
+<script>
+function ukaz_o_festivalu() {
+    viceodstavec.style.display = 'none'
+    viceodstavec.nextElementSibling.style.display = 'block'
+}
+
+if(document.location.hash == '#o-festivalu') {
+    ukaz_o_festivalu()
+}
+</script>
