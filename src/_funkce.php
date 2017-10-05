@@ -4,6 +4,17 @@ function back() {
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
+function config_merge($a, $b) {
+    foreach($b as $k => $v) {
+        if(!is_array($v)) {
+            $a[$k] = $v;
+        } else {
+            $a[$k] = config_merge($a[$k] ?? [], $v);
+        }
+    }
+    return $a;
+}
+
 function cookie_flag_push($name) {
     setcookie($name, '1');
 }
