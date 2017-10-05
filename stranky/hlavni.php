@@ -1,6 +1,7 @@
 <div class="pruh" style="background-image: url(soubory/hlavni_uvodka.jpg); height: 300px; background-size: auto 400%; background-position: 50% 45%"></div>
 
-<div class="pruh" id="o-festivalu">
+<a name="o-festivalu"></a>
+<div class="pruh">
     <div class="obsah">
         <p class="highlight">Exkluzivní zážitek. Pouze hry s hodnocením v červených číslech. Larpový galavečer. V.I.P. hosté. Šampaňské a červený koberec. To nejlepší z české larpové scény na festivalu elitních larpů. V Brně, samozřejmě.</p>
 
@@ -16,7 +17,8 @@
     </div>
 </div>
 
-<div class="pruh" style="background-image: url(soubory/hodinky.jpg); background-size: auto 150%; background-position: bottom;" id="prakticke">
+<a name="prakticke"></a>
+<div class="pruh" style="background-image: url(soubory/hodinky.jpg); background-size: auto 150%; background-position: bottom;">
     <div class="obsah">
         <h2>Praktické info</h2>
         <div class="box1">
