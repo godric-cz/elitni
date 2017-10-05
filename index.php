@@ -40,6 +40,7 @@ $obsah = ob_get_clean();
 <head>
     <link rel="stylesheet" type="text/css" href="soubory/styl.css">
     <title><?=$titulek?></title>
+    <script src="soubory/pohyb-menu.js"></script>
 </head>
 <body>
 
