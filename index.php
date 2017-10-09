@@ -5,21 +5,19 @@ require 'src/_zavadec.php';
 
 // určení stránky, která zpracuje požadavek
 
-$povoleneVUrl = '/^[a-z]+$/';
-$stranka = null;
-
-if($_GET['stranka'] === '') {
-    $stranka = 'hlavni.php';
-} else if($_GET['stranka'] === 'hlavni') {
-    $stranka = null;
-} else if(
-    preg_match($povoleneVUrl, $_GET['stranka']) &&
-    is_file('stranky/' . $_GET['stranka'] . '.php')
-) {
-    $stranka = $_GET['stranka'] . '.php';
-}
-
-if($stranka === null) {
+try {
+    $url = Url::zCesty($_GET['stranka']);
+    if($url->stranka() === '') {
+        $stranka = 'hlavni.php';
+    } else if($url->stranka() === 'hlavni') {
+        throw new NepovolenaUrl;
+    } else {
+        $stranka = $url->stranka() . '.php';
+    }
+    if(!is_file('stranky/' . $stranka)) {
+        throw new NepovolenaUrl;
+    }
+} catch(NepovolenaUrl $e) {
     echo 'stránka neexistuje';
     header('HTTP/1.1 404 Not Found');
     exit();
@@ -28,10 +26,15 @@ if($stranka === null) {
 
 // vykonání kódu stránky
 
-$titulek = 'Festival elitního larpu'; // proměnné pro šablonu
+$titulek = 'Festival elitního larpu'; // proměnné pro šablonu (stránka je může měnit)
 ob_start();
 include 'stranky/' . $stranka;
 $obsah = ob_get_clean();
+
+
+// další proměnné pro šablonu
+
+$httpRoot = str_repeat('../', $url->zanoreni());
 
 
 ?>
@@ -39,6 +42,7 @@ $obsah = ob_get_clean();
 <html>
 <head>
     <title><?=$titulek?></title>
+    <base href="<?=$httpRoot?>"> <!-- pozor na pořadí -->
     <script src="soubory/pohyb-menu.js"></script>
     <link rel="stylesheet" type="text/css" href="soubory/styl.css">
     <link rel="icon" href="soubory/diamond.png" type="image/png" sizes="16x16">

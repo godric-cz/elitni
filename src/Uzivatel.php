@@ -53,7 +53,7 @@ class Uzivatel extends DbObject {
         return in_array($a, $this->aktivity()); // TODO objekt aktivita bude mít asi dvě identity, nějak pořešit
     }
 
-    static function zMailu(string $mail) {
+    static function zMailu(string $mail): ?Uzivatel {
         return self::zWhereRadek('mail = ?', $mail);
     }
 
