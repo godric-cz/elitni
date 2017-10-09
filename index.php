@@ -40,6 +40,8 @@ $obsah = ob_get_clean();
 <head>
     <link rel="stylesheet" type="text/css" href="soubory/styl.css">
     <title><?=$titulek?></title>
+    <link rel="icon" href="soubory/diamond.png" type="image/png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
 </head>
 <body>
 

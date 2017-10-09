@@ -56,8 +56,6 @@ if(post('prihlasit')) {
 
         <?php } else { ?>
 
-        <?php include 'casti/prihlaska-text.html' ?>
-
         <div class="box2">
             <!-- TODO nadpis -->
             <div>
