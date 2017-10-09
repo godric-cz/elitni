@@ -1,5 +1,7 @@
 <?php
 
+use Michelf\Markdown;
+
 function back() {
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
@@ -30,6 +32,10 @@ function cookie_flag_pop($name) {
 
 function get($name) {
     return $_GET[$name] ?? null;
+}
+
+function markdown(string $markdown): string {
+    return Markdown::defaultTransform($markdown);
 }
 
 function post($name) {

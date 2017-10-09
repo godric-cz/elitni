@@ -1,5 +1,9 @@
 <?php
 
+// composer autoloader
+require __DIR__ . '/../vendor/autoload.php';
+
+
 // pomocné funkce
 require __DIR__ . '/_funkce.php';
 
