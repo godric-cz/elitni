@@ -1,4 +1,4 @@
-<div class="pruh" id="pruh-menu" style="background-image: url(soubory/hlavni_uvodka.jpg); height: 300px; background-size: auto 400%; background-position: 50% 45%"></div>
+<div class="pruh obrazek" style="background-image: url(soubory/hlavni_uvodka.jpg); height: 300px;"></div>
 
 <a name="o-festivalu"></a>
 <div class="pruh">
@@ -17,7 +17,7 @@
 </div>
 
 <a name="prakticke"></a>
-<div class="pruh" style="background-image: url(soubory/hodinky.jpg); background-size: auto 150%; background-position: bottom;">
+<div class="pruh obrazek" style="background-image: url(soubory/hodinky.jpg);">
     <div class="obsah">
         <h2>Praktické info</h2>
         <div class="box1">
@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<div class="pruh" style="background-image: url(soubory/auto.jpg); height: 800px; background-size: auto 100%; "></div>
+<div class="pruh obrazek" style="background-image: url(soubory/auto.jpg); height: 500px;"></div>
 
 <div class="pruh" id="larpy">
     <div class="obsah">
@@ -55,9 +55,9 @@
     </div>
 </div>
 
-<div class="pruh" style="height: 700px; background-image: url(soubory/sklenice.jpg); background-size: auto 100%;"></div>
+<div class="pruh obrazek" style="height: 500px; background-image: url(soubory/sklenice.jpg);"></div>
 
-<div class="pruh" id="party">
+<div class="pruh" id="party" style="min-height: 405px;">
     <div class="obsah">
         <h2>Párty</h2>
         <p>Sobotní párty bude vrcholem festivalu, můžete se těšit na tombolu, předávání zlatého larpíka a vybranou společnost.<br>

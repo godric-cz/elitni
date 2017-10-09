@@ -9,8 +9,8 @@ a[name] { display: block; position: absolute; margin-top: -45px; }
 
 em { color: #ffffff; font-style: normal; }
 
-.logopruh { height: 150px; text-align: center; overflow: hidden; background: url(textura.png) 0 0 fixed; height: 100%; background-color: #333; margin-bottom: 45px; }
-.menu { background-color: #c5b178; color: #333; text-align: center; box-shadow: 0px 8px 0px 4px #000; position: absolute; margin-top: -45px; width: 100%; }
+.logopruh { height: 182px; text-align: center; overflow: hidden; background: url(textura2.png); background-color: #333; margin-bottom: 45px; }
+.menu { background-color: #c5b178; color: #333; text-align: center; box-shadow: 0px 15px 15px -15px #000; position: absolute; margin-top: -45px; width: 100%; }
 .menu.fixed { position: fixed; top: 0; margin-top: 0; }
 
 
@@ -25,11 +25,11 @@ em { color: #ffffff; font-style: normal; }
 .menu > a { display: inline-block; color: #333; text-decoration: none; font-weight: bold; margin: 10px 20px; font-size: 18px; line-height: 26px; }
 .menu > a:hover { border-top: solid 2px #333; border-bottom: solid 2px #333; margin: 8px 20px; }
 
-.pruh { background: url(textura.png) 0 0 fixed; height: 100%; background-color: #333; overflow: hidden; }
+.pruh { background: url(textura2.png); height: 100%; background-color: #333; overflow: hidden; }
+.pruh.obrazek { background-attachment: fixed; background-size: auto 100%; background-position: center; }
 .pruh > .obsah { max-width: 1200px; margin: 80px auto; padding: 0 10px; }
 .pruh > .obsah > p { max-width: 1200px; }
 .pruh h2 { color: #ffffff; text-align: center; font-weight: bold; font-size: 40px; }
-#pruh-menu { box-shadow: inset 0px 6px 20px 1px rgba(0, 0, 0, 0.5); }
 
 .highlight { max-width: 940px; text-align: center; margin-left: auto; margin-right: auto; color: #ffffff; margin: 50px auto; }
 
@@ -39,7 +39,7 @@ em { color: #ffffff; font-style: normal; }
 
 .paticka { color: #ffffff; }
 .paticka a { color: #c5b178; }
-.paticka hr { border-color: #888; }
+.paticka hr { border: solid 1px; border-color: rgba(100, 100, 100, 0.7); border-top: 0; }
 .paticka .vlevo { float: left; }
 .paticka .vpravo { float: right; }
 .paticka .vpravo:after { content: " "; display: block; clear: both; height: 80px; }

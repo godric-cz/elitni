@@ -39,7 +39,7 @@ if(post('prihlasit')) {
     }
 </script>
 
-<div class="pruh" style="background-image: url(soubory/formular_uvodka.jpg); height: 300px; background-size: auto 400%; background-position: 50% 37%"></div>
+<div class="pruh obrazek" style="background-image: url(soubory/formular_uvodka.jpg); height: 300px;"></div>
 <div class="pruh">
     <div class="obsah">
 
@@ -95,7 +95,7 @@ if(post('prihlasit')) {
                         </label>
                     </div>
                     <div class="polozka vyber">
-                        Pohlaví<br>
+                        Jste<br>
                         <label>
                             <input type="radio" name="pohlavi" value="m" checked="true">
                             <div class="pseudoinput"></div>
