@@ -27,6 +27,7 @@ em { color: #ffffff; font-style: normal; }
 
 .pruh { background: url(textura2.png); height: 100%; background-color: #333; overflow: hidden; }
 .pruh.obrazek { background-attachment: fixed; background-size: auto 100%; background-position: center; }
+.pruh.obrazekHra { background-attachment: fixed; background-size: auto 528px; background-position: center 0; }
 .pruh > .obsah { max-width: 1200px; margin: 80px auto; padding: 0 10px; }
 .pruh > .obsah > p { max-width: 1200px; }
 .pruh h2 { color: #ffffff; text-align: center; font-weight: bold; font-size: 40px; }
@@ -35,7 +36,7 @@ em { color: #ffffff; font-style: normal; }
 
 .zlata { color: var(--gold); }
 
-.hlavicka > div > img { margin: 20px 0px 20px 0px; }
+.hlavicka > div img { margin: 20px 0px 20px 0px; }
 
 .paticka { color: #ffffff; }
 .paticka a { color: #c5b178; }
@@ -49,8 +50,16 @@ em { color: #ffffff; font-style: normal; }
 .larpThumb:hover { background-color: #000; opacity: 0.5; }
 .larpNazev { width: 100%; height: 80px; float:left; margin-top: -5px; color: #000; text-align: center; line-height: 80px; font-weight: 900; background-color: var(--gold); }
 
-/*Výpis hry*/
-.hra td:last-child { color: #fff; border-style: solid; }
+/*Detail hry*/
+.hraPredchozi { float:left; margin-top: -66px; }
+.hraDalsi { float:right; margin-top: -66px; }
+.hraDetail { margin-top: 50px; }
+.hraDetail table { margin: 0 auto }
+.hraDetail td:first-child { color: #fff; padding-right: 50px; }
+.hraAnotace { max-width: 1200px; margin: 50px auto 50px auto; color: #fff }
+.larpdbLink.outer { background-color: #c5b178; margin: 50px auto 150px auto; width: 600px; height: 50px; padding: 5px 5px 5px 5px; }
+.larpdbLink.outer:hover { opacity:0.8; }
+.larpdbLink.inner { background-color: #c5b178; color: #000; text-align: center; font-weight: bold; border-color: #000; border: solid #333 2px; line-height: 46px; }
 
 .box2 { max-width: 1200px; margin: -20px auto; text-align: center; font-size: 24px; font-weight: bold; }
 .box2 > div { background-image: url('form-stred.png'); background-size: 100% auto; padding: 50px; }

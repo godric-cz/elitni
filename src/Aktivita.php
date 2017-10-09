@@ -4,6 +4,8 @@ class Aktivita extends DbObject {
 
     private $konec;
     private $zacatek;
+    private $aktivitaDalsi;
+    private $aktivitaPredchozi;
 
     protected static $tabulka = 'aktivita';
 
@@ -19,6 +21,22 @@ class Aktivita extends DbObject {
             WHERE $where
             GROUP BY aktivita.id
         ";
+    }
+
+    function aktivitaPredchozi(): Aktivita {
+        if (!$this->aktivitaPredchozi)
+          $this->aktivitaPredchozi = self::zWhereRadek('aktivita.id = (SELECT COALESCE(MAX(id), (SELECT MAX(id) FROM aktivita)) FROM aktivita WHERE id < ?)', $this->id()); //tohle vrací objekt Aktivita
+        return $this->aktivitaPredchozi;
+    }
+
+    function aktivitaDalsi(): Aktivita {
+      if (!$this->aktivitaDalsi)
+        $this->aktivitaDalsi = self::zWhereRadek('aktivita.id = (SELECT COALESCE(MIN(id), (SELECT MIN(id) FROM aktivita)) FROM aktivita WHERE id > ?)', $this->id()); //tohle vrací objekt Aktivita
+      return $this->aktivitaDalsi;
+    }
+
+    function anotace(): string {
+        return markdown($this->r['popis']);
     }
 
     function autor(): string {
@@ -41,6 +59,10 @@ class Aktivita extends DbObject {
             $a->konec() <= $this->zacatek() ||
             $this->konec() <= $a->zacatek()
         );
+    }
+
+    function larpdb(): string {
+        return $this->r['larpdb'];
     }
 
     function nazev(): string {
