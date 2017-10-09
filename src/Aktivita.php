@@ -21,6 +21,14 @@ class Aktivita extends DbObject {
         ";
     }
 
+    function autor(): string {
+        return $this->r['autor'];
+    }
+
+    function cena(): string {
+        return $this->r['cena'];
+    }
+
     function konec(): DateTimeImmutable {
         if(!$this->konec) {
             $this->konec = new DateTimeImmutable($this->r['konec']);
@@ -55,6 +63,20 @@ class Aktivita extends DbObject {
         );
     }
 
+    function pocetHracu($typ = null): int {
+        if($typ === NULL) {
+          return $this->r['kapacita_m'] + $this->r['kapacita_f'] + $this->r['kapacita_u'];
+        } elseif($typ == 'm') {
+          return $this->r['kapacita_m'];
+        } elseif($typ == 'z') {
+          return $this->r['kapacita_f'];
+        } elseif($typ == 'u') {
+          return $this->r['kapacita_u'];
+        } else {
+          return 0;
+        }
+    }
+
     function prihlas(Uzivatel $u): void {
         if(!$this->volnoPro($u))    throw new Plno;
         if(!$u->maVolnoNa($this))   throw new PrekrytiAktivit;
@@ -72,6 +94,10 @@ class Aktivita extends DbObject {
             $this->id(),
             $u->id()
         );
+    }
+
+    function uvadec(): string {
+        return $this->r['uvadec'];
     }
 
     function volnoPro(Uzivatel $u): bool {

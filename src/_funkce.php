@@ -28,6 +28,10 @@ function cookie_flag_pop($name) {
     }
 }
 
+function get($name) {
+    return $_GET[$name] ?? null;
+}
+
 function post($name) {
     return $_POST[$name] ?? null;
 }

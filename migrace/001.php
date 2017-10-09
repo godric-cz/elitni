@@ -21,6 +21,9 @@ CREATE TABLE `aktivita` (
   `kapacita_f` int NOT NULL,
   `kapacita_u` int NOT NULL,
   `cena` int NOT NULL,
+  `autor` varchar(200) NOT NULL,
+  `doplnek` varchar(400) NOT NULL,
+  `larpdb` varchar(400),
   `popis` text NOT NULL
 );
 

@@ -38,9 +38,11 @@ $obsah = ob_get_clean();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="soubory/styl.css">
     <title><?=$titulek?></title>
     <script src="soubory/pohyb-menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="soubory/styl.css">
+    <link rel="icon" href="soubory/diamond.png" type="image/png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
 </head>
 <body>
 
