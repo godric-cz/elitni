@@ -34,7 +34,7 @@
                     <li>protože nemáme na práci nic lepšího než píchat do vosího hnízda larpové komunity
                     <li>protože tento rok ještě neproběhlo předání Zlatého larpíka
                 </ul>
-                <p><em>KONTAKT? </em><a href="mailto: festivalelitnichlarpu@gmail.com">festivalelitnichlarpu@gmail.com</p>
+                <p><em>KONTAKT? </em><a href="mailto: festivalelitnichlarpu@gmail.com">festivalelitnichlarpu@gmail.com</a></p>
             </div>
         </div>
     </div>

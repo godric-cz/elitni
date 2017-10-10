@@ -83,11 +83,11 @@ if(post('prihlasit')) {
                     </div>
                     <div class="polozka">
                         Korespondenční adresa
-                        <input type="text" name="adresa" id="adresa">
+                        <input type="text" name="polozky[Adresa]" id="adresa">
                     </div>
                     <div class="polozka">
                         Telefonní kontakt
-                        <input type="text" name="telefon" id="telefon">
+                        <input type="text" name="polozky[Telefon]" id="telefon">
                     </div>
                     <div class="polozka vyber">
                         Máte zájem o ubytování?<br>
