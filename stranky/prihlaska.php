@@ -81,8 +81,16 @@ if(post('prihlasit')) {
                         E-mailová adresa
                         <input type="text" name="mail" id="mailpole">
                     </div>
+                    <div class="polozka">
+                        Korespondenční adresa
+                        <input type="text" name="adresa" id="adresa">
+                    </div>
+                    <div class="polozka">
+                        Telefonní kontakt
+                        <input type="text" name="adresa" id="adresa">
+                    </div>
                     <div class="polozka vyber">
-                        Máte zájem o ubytování z pátku na sobotu?<br>
+                        Máte zájem o ubytování?<br>
                         <label>
                             <input type="radio" name="polozky[Ubytování]" value="ano" checked="true">
                             <div class="pseudoinput"></div>
@@ -92,6 +100,47 @@ if(post('prihlasit')) {
                             <input type="radio" name="polozky[Ubytování]" value="ne">
                             <div class="pseudoinput"></div>
                             Ne
+                        </label>
+                    </div>
+                    <div class="polozka vyber">
+                        Máte zájem o tričko? (<a href="soubory/tricko.jpg" target="_blank">náhled</a>)<br>
+                        <label>
+                            <input type="radio" name="polozky[Tričko]" value="ano" checked="true">
+                            <div class="pseudoinput"></div>
+                            Ano
+                        </label>
+                        <label>
+                            <input type="radio" name="polozky[Tričko]" value="ne">
+                            <div class="pseudoinput"></div>
+                            Ne
+                        </label>
+                    </div>
+                    <div class="polozka vyber">
+                        Vaše konfekční velikost<br>
+                        <label>
+                            <input type="radio" name="polozky[Velikost]" value="S">
+                            <div class="pseudoinput"></div>
+                            S
+                        </label>
+                        <label>
+                            <input type="radio" name="polozky[Velikost]" value="M">
+                            <div class="pseudoinput"></div>
+                            M
+                        </label>
+                        <label>
+                            <input type="radio" name="polozky[Velikost]" value="L">
+                            <div class="pseudoinput"></div>
+                            L
+                        </label>
+                        <label>
+                            <input type="radio" name="polozky[Velikost]" value="XL">
+                            <div class="pseudoinput"></div>
+                            XL
+                        </label>
+                        <label>
+                            <input type="radio" name="polozky[Velikost]" value="XXL">
+                            <div class="pseudoinput"></div>
+                            XXL
                         </label>
                     </div>
                     <div class="polozka vyber">

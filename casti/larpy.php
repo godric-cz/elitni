@@ -7,11 +7,10 @@
   while ($row = $result->fetch_row()) {
     $id=$row[0];
     $nazev=$row[1];
-    echo '<a href="hra/'.$id.'"><div class="larpThumb">';
+    echo '<a href="hra/'.$id.'" class="larpThumb"><div>';
     echo '<img src="soubory/hry/nahledy/'.$id.'.jpg">';
     echo '<div class="larpNazev">'.$nazev.'</div>';
     echo '</div></a>';
   }
   ?>
-
 </div>

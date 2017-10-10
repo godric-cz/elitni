@@ -26,15 +26,15 @@
                 <p><em>KDE?</em> Festival proběhne pochopitelně ve středobodu larpové komunity, české i světové, v Brně.
 </p>
                 <p><em>UBYTOVÁNÍ:</em> Bude zajištěno v hotelu Hilton (spacáky a karimatky s sebou).</p>
-                <p><em>ZA KOLIK?</em> Většina her stojí 200 nebo 300 Kč, ubytování 50 Kč a tričko 200 Kč.</p>
+                <p><em>ZA KOLIK?</em> Většina her stojí 200 nebo 300 Kč, ubytování 50 Kč/noc a tričko 150 Kč.</p>
                 <p><em>PROČ?</em> Na tomto místě bychom vám rádi zpříjemnili den zábavným kvízem. Vyberte si tedy jednu, nebo klidně i více odpovědí:</p>
                 <ul>
                     <li>protože chceme uspokojit přání hráčů, kteří si ještě nestihli zahrát některé skvělé hry, jež už leckdy nejsou na běžných festivalech k mání
-                    <li>protože máme rádi šampaňské, vybranou společnost a vytříbenou společenskou konverzaci
+                    <li>protože máme rádi šampaňské, vybranou společnost a vytříbenou konverzaci
                     <li>protože nemáme na práci nic lepšího než píchat do vosího hnízda larpové komunity
                     <li>protože tento rok ještě neproběhlo předání Zlatého larpíka
                 </ul>
-                <p><em>PÁRTY?</em> Bude! (viz níže)</p>
+                <p><em>KONTAKT:</em><a href="mailto: festivalelitnichlarpu@gmail.com">festivalelitnichlarpu@gmail.com</p>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
 <div class="pruh obrazek" style="background-image: url(soubory/auto.jpg); height: 500px;"></div>
 
 <div class="pruh" id="larpy">
-    <div class="obsah">
+    <div class="obsah larpy">
         <?php include 'casti/larpy.php' ?>
     </div>
 </div>
@@ -60,9 +60,9 @@
 <div class="pruh" id="party" style="min-height: 405px;">
     <div class="obsah">
         <h2>Párty</h2>
-        <p>Sobotní párty bude vrcholem festivalu, můžete se těšit na tombolu, předávání zlatého larpíka a vybranou společnost.<br>
+        <p>Sobotní párty bude vrcholem festivalu, můžete se těšit na předávání zlatého larpíka, vybranou společnost a další program.<br>
         <em>Dress code</em>: Black Tie (smoking/šaty), avšak uvítáme vás v čemkoliv.</p>
-        <p>V pátek se možná bude konat tajná párty nejmenované larpové společnosti, která slaví své desetileté jubileum. Tato exkluzivní událost bude pro uzavřenou společnost, do které se samozřejmě všichni hosté Festivalu elitních larpů počítají a jsou srdečně zváni. Možná nebude tak snadné ji najít, po více informacích se ptejte u registračního pultu.</p>
+        <p>V pátek se bude konat tajná párty <a href="http://courtofmoravia.cz" target="_blank">nejmenované larpové společnosti</a>, která slaví své desetileté jubileum. Tato exkluzivní událost bude pro uzavřenou společnost, do které se samozřejmě všichni hosté Festivalu elitních larpů počítají a jsou srdečně zváni. Možná nebude tak snadné ji najít, po více informacích se ptejte u registračního pultu.</p>
     </div>
 </div>
 
