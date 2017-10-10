@@ -39,7 +39,7 @@ if(post('prihlasit')) {
     }
 </script>
 
-<div class="pruh obrazek" style="background-image: url(soubory/formular_uvodka.jpg); height: 300px;"></div>
+<div class="pruh obrazekHra" style="background-image: url(soubory/formular_uvodka.jpg); height: 300px;"></div>
 <div class="pruh">
     <div class="obsah">
 
