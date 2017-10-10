@@ -1,6 +1,5 @@
 @font-face { font-family: 'Josefin Sans'; src: url('font/JosefinSans-Light.ttf'); }
-@font-face { font-family: 'Josefin Sans'; font-weight: bold; src: url('font/JosefinSans-Regular.ttf');}
-@font-face { font-family: 'Josefin Sans'; font-style: italic; src: url('font/JosefinSans-Italic.ttf');}
+@font-face { font-family: 'Josefin Sans'; font-weight: bold; src: url('font/JosefinSans-Regular.ttf'); }
 
 body { margin: 0; font-family: 'Josefin Sans' , sans-serif; color: #c5b178; font-size: 20px; background-color: #333333; }
 
