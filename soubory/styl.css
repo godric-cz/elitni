@@ -1,5 +1,4 @@
 @font-face { font-family: 'Josefin Sans', sans-serif; }
-:root { --gold: #c5b178; }
 
 body { margin: 0; font-family: 'Josefin Sans' , sans-serif; color: #c5b178; font-size: 20px; background-color: #333333; }
 
@@ -34,7 +33,7 @@ em { color: #ffffff; font-style: normal; }
 
 .highlight { max-width: 940px; text-align: center; margin-left: auto; margin-right: auto; color: #ffffff; margin: 50px auto; }
 
-.zlata { color: var(--gold); }
+.zlata { color: #c5b178; }
 
 .hlavicka > div img { margin: 20px 0px 20px 0px; }
 
@@ -46,9 +45,9 @@ em { color: #ffffff; font-style: normal; }
 .paticka .vpravo:after { content: " "; display: block; clear: both; height: 80px; }
 
 .larpyVypis { width: 1300px; }
-.larpThumb { width: 400px; height: 444px; float:left; margin-bottom: 50px; border-style: solid; border-width: 2px; border-color: #c5b178; border-color: var(--gold); padding: 4px; }
+.larpThumb { width: 400px; height: 444px; float:left; margin-bottom: 50px; border-style: solid; border-width: 2px; border-color: #c5b178; border-color: #c5b178; padding: 4px; }
 .larpThumb:hover { background-color: #000; opacity: 0.5; }
-.larpNazev { width: 100%; height: 80px; float:left; margin-top: -5px; color: #000; text-align: center; line-height: 80px; font-weight: 900; background-color: var(--gold); }
+.larpNazev { width: 100%; height: 80px; float:left; margin-top: -5px; color: #000; text-align: center; line-height: 80px; font-weight: 900; background-color: #c5b178; }
 
 /*Detail hry*/
 .hraPredchozi { float:left; margin-top: -66px; }
