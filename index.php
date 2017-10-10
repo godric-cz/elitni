@@ -46,10 +46,9 @@ $httpRoot = str_repeat('../', $url->zanoreni());
     <script src="soubory/pohyb-menu.js"></script>
     <link rel="stylesheet" type="text/css" href="soubory/styl.css">
     <link rel="icon" href="soubory/diamond.png" type="image/png" sizes="16x16">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
     <meta property="og:url"                content="http://festivalelitnichlarpu.vip" />
     <meta property="og:title"              content="Festival elitních larpů" />
-    <meta property="og:description"        content="Ten nejelitnější" />
+    <meta property="og:description"        content="Exkluzivní zážitek. Pouze hry v červených číslech. Larpový galavečer. V.I.P. hosté. Šampaňské a červený koberec. To nejlepší z české larpové scény na Festivalu elitních larpů. V Brně, samozřejmě." />
     <meta property="og:image"              content="soubory/fb_logo.jpg" />
 </head>
 <body>
