@@ -41,3 +41,9 @@ function markdown(string $markdown): string {
 function post($name) {
     return $_POST[$name] ?? null;
 }
+
+function sort_by_method(&$array, $methodName) {
+    return usort($array, function($a, $b)use($methodName) {
+        return $a->$methodName() <=> $b->$methodName();
+    });
+}
