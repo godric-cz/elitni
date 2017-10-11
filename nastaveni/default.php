@@ -8,4 +8,5 @@ return [
         'database'  =>  'elitni',
     ],
     'errors'    =>  true,
+    'startRegu' =>  '2017-10-12 21:00',
 ];

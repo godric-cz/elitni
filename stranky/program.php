@@ -50,7 +50,11 @@ if(post('odhlasit')) {
 
                     <div class="program">
                         <?php
-                            $uzivatel = $u; // proměnná pro program
+                            if(strtotime($GLOBALS['CONFIG']['startRegu']) < time()) {
+                                $uzivatel = $u; // proměnná pro program (jen pokud už běží registrace)
+                            } else {
+                                $uzivatel = null;
+                            }
                             include 'casti/program-tabulka.php';
                         ?>
                     </div>
