@@ -19,6 +19,10 @@ class Uzivatel extends DbObject {
         return $this->aktivity;
     }
 
+    function mail(): string {
+        return $this->r['mail'];
+    }
+
     function maVolnoNa(Aktivita $a): bool {
         foreach($this->aktivity() as $stavajiciAktivita) {
             if($stavajiciAktivita->kryjeSe($a)) return false;
@@ -51,6 +55,10 @@ class Uzivatel extends DbObject {
 
     function prihlasenNa(Aktivita $a): bool {
         return in_array($a, $this->aktivity()); // TODO objekt aktivita bude mít asi dvě identity, nějak pořešit
+    }
+
+    function prihlasenoAktivit(): int {
+        return count($this->aktivity());
     }
 
     static function zMailu(string $mail): ?Uzivatel {

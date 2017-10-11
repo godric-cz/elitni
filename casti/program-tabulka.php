@@ -6,6 +6,8 @@ use \Aktivita;
 use \Blok;
 use \Uzivatel;
 
+$uzivatel = $uzivatel ?? null; // musí být nastaveno zvenčí, pokud se má přihlašovat
+
 $bloky = [
     Blok::zRetezcu('2017-11-03 18:00', '2017-11-03 22:00'),
     Blok::zRetezcu('2017-11-04 09:00', '2017-11-04 13:00'),
@@ -14,8 +16,6 @@ $bloky = [
 ];
 
 $aktivity = Aktivita::zVsech();
-
-$uzivatel = Uzivatel::zId(3);
 
 ////////////////////
 // pomocné funkce //
