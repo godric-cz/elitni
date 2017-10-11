@@ -4,7 +4,7 @@
  * Test výpisu aktivit s přihlašováním a odhlašováním
  */
 
-$u = Uzivatel::zId(8); // TODO
+$u = isset($_COOKIE['prednastaveny_mail']) ? Uzivatel::zMailu($_COOKIE['prednastaveny_mail']) : null;
 
 if(post('prihlasit')) {
     try {
@@ -20,18 +20,48 @@ if(post('odhlasit')) {
     back();
 }
 
+if(isset($_POST['zadatMail'])) {
+    $u = Uzivatel::zMailu(post('zadatMail'));
+    if(!$u) {
+        cookie_flag_push('program_neexistujici_mail');
+    } else {
+        setcookie('prednastaveny_mail', post('zadatMail'));
+    }
+    back();
+}
 
-//echo $u->mail() . '<br><br>';
+if(isset($_POST['zrusitMail'])) {
+    setcookie('prednastaveny_mail', null);
+    back();
+}
 
 ?>
 
 <div class="pruh" style="padding-bottom: 200px">
     <div class="obsah">
         <h2 style="margin-bottom: 50px">Program</h2>
+
         <div class="box2">
             <div>
 
-                <?php if(cookie_flag_pop('program_PrekrytiAktivit')) { ?>
+                <?php if(cookie_flag_pop('program_neexistujici_mail')) { ?>
+
+                    E-mailová adresa bohužel není na seznamu hostů, nejdříve se tedy prosím <a href="prihlaska" style="color: #fff">přihlašte na festival</a>.<br><br>
+                    <a href="" style="color: #fff">zpět</a>
+
+                <?php } else if(!$u) { ?>
+
+                    <form method="post">
+                        <div class="polozka">
+                            Zadejte prosím e-mail, se kterým jste se přilásili na festival.
+                            <input type="text" name="zadatMail">
+                        </div>
+                        <div class="odeslat">
+                            <input type="submit" value="Pokračovat k přihlašování her">
+                        </div>
+                    </form>
+
+                <?php } else if(cookie_flag_pop('program_PrekrytiAktivit')) { ?>
 
                     V daném čase už máte přihlášenu jinou hru.<br><br>
                     <a href="" style="color: #fff">zpět</a>
@@ -63,6 +93,15 @@ if(post('odhlasit')) {
 
             </div>
         </div>
+
+        <?php if($u) { ?>
+            <br><br>
+            Přihlašujete se jako <em><?=$u->mail()?></em>. Pokud to nejste vy, můžete si
+            <form method="post" style="display: inline;">
+                <input type="hidden" name="zrusitMail" value="1">
+                <input type="submit" value="zvolit jiný e-mail" style="padding:0; background: none; border: 0; font: inherit; color: #fff; cursor: pointer;">.
+            </form>
+        <?php } ?>
     </div>
 </div>
 
