@@ -62,7 +62,7 @@
         <h2>Párty</h2>
         <p>Sobotní párty bude vrcholem festivalu, můžete se těšit na předávání zlatého larpíka, vybranou společnost a další program.<br>
         <em>Dress code</em>: Black Tie (smoking/šaty), avšak uvítáme vás v čemkoliv.</p>
-        <p>V pátek se bude konat tajná párty <a href="http://courtofmoravia.cz" target="_blank">nejmenované larpové společnosti</a>, která slaví své desetileté jubileum. Tato exkluzivní událost bude pro uzavřenou společnost, do které se samozřejmě všichni hosté Festivalu elitních larpů počítají a jsou srdečně zváni. Možná nebude tak snadné ji najít, po více informacích se ptejte u registračního pultu.</p>
+        <p>V pátek se bude konat tajná párty <a href="http://courtofmoravia.com" target="_blank">nejmenované larpové společnosti</a>, která slaví své desetileté jubileum. Tato exkluzivní událost bude pro uzavřenou společnost, do které se samozřejmě všichni hosté Festivalu elitních larpů počítají a jsou srdečně zváni. Možná nebude tak snadné ji najít, po více informacích se ptejte u registračního pultu.</p>
     </div>
 </div>
 
