@@ -7,7 +7,11 @@
 $u = Uzivatel::zId(8); // TODO
 
 if(post('prihlasit')) {
-    Aktivita::zId(post('prihlasit'))->prihlas($u);
+    try {
+        Aktivita::zId(post('prihlasit'))->prihlas($u);
+    } catch(ChybaPrihlasovani $e) {
+        cookie_flag_push('program_' . get_class($e));
+    }
     back();
 }
 
@@ -26,12 +30,33 @@ if(post('odhlasit')) {
         <h2 style="margin-bottom: 50px">Program</h2>
         <div class="box2">
             <div>
-            <div class="program">
-                <?php
-                    $uzivatel = $u; // proměnná pro program
-                    include 'casti/program-tabulka.php';
-                ?>
-            </div>
+
+                <?php if(cookie_flag_pop('program_PrekrytiAktivit')) { ?>
+
+                    V daném čase už máte přihlášenu jinou hru.<br><br>
+                    <a href="" style="color: #fff">zpět</a>
+
+                <?php } else if(cookie_flag_pop('program_Plno')) { ?>
+
+                    Omlouváme se, hra už je plná.<br><br>
+                    <a href="" style="color: #fff">zpět</a>
+
+                <?php } else if(cookie_flag_pop('program_PrekrocenPocetAktivit')) { ?>
+
+                    V této vlně už jste si přihlásili maximální možný počet her.<br><br>
+                    <a href="" style="color: #fff">zpět</a>
+
+                <?php } else { ?>
+
+                    <div class="program">
+                        <?php
+                            $uzivatel = $u; // proměnná pro program
+                            include 'casti/program-tabulka.php';
+                        ?>
+                    </div>
+
+                <?php } ?>
+
             </div>
         </div>
     </div>

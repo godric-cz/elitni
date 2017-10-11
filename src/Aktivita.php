@@ -149,6 +149,7 @@ class Aktivita extends DbObject {
 
 }
 
-class PrekrytiAktivit extends Exception {}
-class Plno extends Exception {}
-class PrekrocenPocetAktivit extends Exception {}
+class ChybaPrihlasovani extends Exception {}
+class PrekrytiAktivit extends ChybaPrihlasovani {}
+class Plno extends ChybaPrihlasovani {}
+class PrekrocenPocetAktivit extends ChybaPrihlasovani {}
