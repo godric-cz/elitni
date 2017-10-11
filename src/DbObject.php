@@ -7,6 +7,8 @@ abstract class DbObject {
 
     protected $r; // řádek z databáze
 
+    private static $cache; // cache objektů, aby nevznikal dvakrát objekt s stejným id
+
     protected static $tabulka;    // název tabulky - odděděná třída _musí_ přepsat
     protected static $pk = 'id';  // název primárního klíče - odděděná třída může přepsat
 
@@ -67,11 +69,18 @@ abstract class DbObject {
     /** Načte a vrátí objekty pomocí dané where klauzule */
     protected static function zWhere($where, ...$params) {
         $o = self::$sdb->query(static::dotaz($where), ...$params); // static aby odděděná třída mohla přepsat dotaz na něco složitějšího
+
         $a = [];
-        while($r = mysqli_fetch_assoc($o))
-            $a[] = new static($r); // static aby vznikaly objekty správné třídy
+        $trida = static::class;
+        while($r = mysqli_fetch_assoc($o)) {
+            $id = $r[static::$pk];
+            if(empty(self::$cache[$trida][$id])) { // ukládání do cache, aby se jeden objekt nevytvořil 2x
+                self::$cache[$trida][$id] = new static($r); // static aby vznikaly objekty správné třídy
+            }
+            $a[] = self::$cache[$trida][$id];
             // TODO id jako klíč pole?
-            // TODO cacheování?
+        }
+
         return $a;
     }
 

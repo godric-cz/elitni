@@ -42,8 +42,12 @@ function post($name) {
     return $_POST[$name] ?? null;
 }
 
-function sort_by_method(&$array, $methodName) {
-    return usort($array, function($a, $b)use($methodName) {
-        return $a->$methodName() <=> $b->$methodName();
+function sort_by_methods(&$array, ...$methods) {
+    return usort($array, function($a, $b)use($methods) {
+        for($i = 0, $max = count($methods); $i < $max; $i++) {
+            $cmp = $a->{$methods[$i]}() <=> $b->{$methods[$i]}();
+            if($cmp) return $cmp;
+        }
+        return 0;
     });
 }
