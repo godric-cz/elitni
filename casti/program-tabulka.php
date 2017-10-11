@@ -31,13 +31,13 @@ function aktivita_zabira_blok($aktivita, $blok) {
 
 function den_cesky($zacatek) {
     static $dny = [
+        'neděle', // děkuji za v něděli začínající týden :/
         'pondělí',
         'úterý',
         'středa',
         'čtvrtek',
         'pátek',
         'sobota',
-        'neděle'
     ];
     return $dny[$zacatek->format('w')];
 }
@@ -117,7 +117,7 @@ function zobraz_bloky($bloky) {
 }
 
 function zobraz_prazdnou_bunku() {
-    echo '<td></td>';
+    echo '<td class="prazdna"></td>';
 }
 
 function zobraz_prihlasovani($aktivita, $uzivatel) {
@@ -142,6 +142,13 @@ function zobraz_prihlasovani($aktivita, $uzivatel) {
 function zobraz_program($program, $bloky, $uzivatel) {
     echo '<table>';
     zobraz_bloky($bloky);
+    echo '</table>';
+
+    echo '<table>';
+    echo '<colgroup>';
+    foreach($bloky as $blok) echo '<col>';
+    echo '</colgroup>';
+
     foreach($program as $radek => $bunky) {
         echo '<tr>';
 
@@ -160,6 +167,7 @@ function zobraz_program($program, $bloky, $uzivatel) {
 
         echo '</tr>';
     }
+
     echo '</table>';
 }
 
@@ -167,9 +175,5 @@ function zobraz_program($program, $bloky, $uzivatel) {
 // hlavní kód //
 ////////////////
 
-$start = microtime(true);
-
 $program = sestav_program_z($aktivity, $bloky);
 zobraz_program($program, $bloky, $uzivatel);
-
-echo '<br>' . (microtime(true) - $start);

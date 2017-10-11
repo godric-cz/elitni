@@ -63,7 +63,7 @@ em { color: #ffffff; font-style: normal; }
 .larpdbLink.inner { background-color: #c5b178; color: #000; text-align: center; font-weight: bold; border-color: #000; border: solid #333 2px; line-height: 46px; }
 
 /*Program tabulkovy*/
-.program { display: block; max-width: 100%; height: auto; width: auto; margin-left: auto; margin-right: auto; }
+.programt { display: block; max-width: 100%; height: auto; width: auto; margin-left: auto; margin-right: auto; }
 
 .box2 { max-width: 1200px; margin: -20px auto; text-align: center; font-size: 24px; font-weight: bold; }
 .box2 > div { background-image: url('form-stred.png'); background-size: 100% auto; padding: 50px; }
@@ -78,3 +78,13 @@ em { color: #ffffff; font-style: normal; }
 .box2 textarea { display: block; border: none; border-radius: 25px; width: 800px; height: 150px; padding: 20px; /* TODO not resizeable */ margin: 15px auto; font-family: inherit; font-size: 25px; }
 .box2 .odeslat { background-color: #c5b178; padding: 5px; margin: 100px auto; width: 400px; }
 .box2 .odeslat input { display: block; background-color: #c5b178; border: solid #333 2px; width: 100%; padding: 50px 0; font-family: inherit; font-size: 25px; color: #333; cursor: pointer; }
+
+.program { font-weight: bold; margin: -50px 0; font-size: 22px; }
+.program .den { color: #fff; font-size: 26px; }
+.program .cas { font-size: 20px; line-height: 36px; }
+.program table { width: 100%;  border-spacing: 3px; }
+.program td { text-align: center; width: 25%; height: 90px;  color: #1a1a1a; border: solid 1px rgba(100, 100, 100, 0.0); }
+.program col { background-color: #c5b178; }
+.program col:nth-child(even) { background-color: #e9d5a2; }
+.program td.prazdna { background-color: #6f6f6f; }
+.program form { display: none; }
