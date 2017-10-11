@@ -21,7 +21,7 @@ if(post('odhlasit')) {
 
 ?>
 
-<div class="pruh">
+<div class="pruh" style="padding-bottom: 200px">
     <div class="obsah">
         <h2 style="margin-bottom: 50px">Program</h2>
         <div class="box2">
@@ -37,3 +37,12 @@ if(post('odhlasit')) {
     </div>
 </div>
 
+<script>
+(function(){
+    var sneaky = new ScrollSneak(location.hostname);
+
+    for(i = 0, len = document.forms.length; i < len; i++) {
+        document.forms[i].onclick = sneaky.sneak;
+    }
+})();
+</script>
