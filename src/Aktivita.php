@@ -47,6 +47,10 @@ class Aktivita extends DbObject {
         return $this->r['cena'];
     }
 
+    function doplnek(): string {
+        return $this->r['doplnek'];
+    }
+
     function konec(): DateTimeImmutable {
         if(!$this->konec) {
             $this->konec = new DateTimeImmutable($this->r['konec']);

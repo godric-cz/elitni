@@ -83,7 +83,7 @@ function zacatek_na_blok($zacatek) {
 }
 
 function zobraz_aktivitu($aktivita, $delka, $blok, $uzivatel) {
-    $extra = '';
+    $extra = '<br>'.$aktivita->doplnek();
     if($aktivita->zacatek() != $blok->zacatek() || $aktivita->konec() != $blok->konec()) {
         $zacatek = $aktivita->zacatek()->format('H:i');
         $konec = $aktivita->konec()->format('H:i');
