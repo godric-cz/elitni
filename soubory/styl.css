@@ -3,7 +3,7 @@
 
 body { margin: 0; font-family: 'Josefin Sans' , sans-serif; color: #c5b178; font-size: 20px; background-color: #333333; }
 
-a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: #fff; }
 a:hover { text-decoration: underline; }
 a[name] { display: block; position: absolute; margin-top: -45px; }
 
@@ -57,12 +57,14 @@ em { color: #ffffff; font-style: normal; }
 .hraDetail { margin-top: 50px; }
 .hraDetail table { margin: 0 auto }
 .hraDetail td:first-child { color: #fff; padding-right: 50px; }
+.hraDetail a:hover { color: #000; text-decoration: none;}
 .hraAnotace { max-width: 1200px; margin: 50px auto 50px auto; color: #fff }
 .larpdbLink.outer { background-color: #c5b178; margin: 50px auto 150px auto; width: 600px; height: 50px; padding: 5px 5px 5px 5px; }
 .larpdbLink.outer:hover { opacity:0.8; }
 .larpdbLink.inner { background-color: #c5b178; color: #000; text-align: center; font-weight: bold; border-color: #000; border: solid #333 2px; line-height: 46px; }
 
 /*Program tabulkovy*/
+.formPrihlaska { margin-top: -60px; font-weight: normal; font-size: 22px; }
 .programt { display: block; max-width: 100%; height: auto; width: auto; margin-left: auto; margin-right: auto; }
 
 .box2 { max-width: 1200px; margin: -20px auto; text-align: center; font-size: 24px; font-weight: bold; }

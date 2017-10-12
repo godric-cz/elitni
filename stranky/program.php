@@ -53,13 +53,14 @@ if(isset($_POST['zrusitMail'])) {
 
                     <form method="post">
                         <div class="polozka">
-                            Zadejte prosím e-mail, se kterým jste se přilásili na festival.
+                            Zadejte prosím e-mail, který jste zadali při registraci.
                             <input type="text" name="zadatMail">
                         </div>
                         <div class="odeslat">
                             <input type="submit" value="Pokračovat k přihlašování her">
                         </div>
                     </form>
+                    <div class="formPrihlaska"><a href="programt">Chci si jen prohlédnout program</a></div>
 
                 <?php } else if(cookie_flag_pop('program_PrekrytiAktivit')) { ?>
 

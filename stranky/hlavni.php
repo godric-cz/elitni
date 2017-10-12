@@ -43,7 +43,8 @@
 <div class="pruh" id="prihlaska">
     <div class="obsah">
         <?php include 'casti/prihlaska-text.html' ?>
-        <p class="highlight"><a href="prihlaska">K formuláři ZDE</a></p>
+        <div class="highlight"><a href="prihlaska">Registrace na festival ZDE</a></div>
+        <div class="highlight" style="margin-top: -30px;"><a href="program">Přihlašování her ZDE</a></div>
     </div>
 </div>
 
