@@ -75,15 +75,15 @@ function sestav_program_z($aktivity, $bloky) {
 }
 
 function zacatek_na_blok($zacatek) {
-    $h = $zacatek->format('H'); // TODO
-    if($h == 18) return 0;
-    if($h ==  9) return 1;
-    if($h == 15) return 2;
-    if($h == 10) return 3;
+    $h = (int) $zacatek->format('H'); // TODO
+    if(17 <= $h && $h <= 19) return 0;
+    if( 7 <= $h && $h <=  9) return 1;
+    if(14 <= $h && $h <= 16) return 2;
+    if(10 <= $h && $h <= 12) return 3;
 }
 
 function zobraz_aktivitu($aktivita, $delka, $blok, $uzivatel) {
-    $extra = '<br>'.$aktivita->doplnek();
+    $extra = '';
     if($aktivita->zacatek() != $blok->zacatek() || $aktivita->konec() != $blok->konec()) {
         $zacatek = $aktivita->zacatek()->format('H:i');
         $konec = $aktivita->konec()->format('H:i');
