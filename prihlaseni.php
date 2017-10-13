@@ -25,8 +25,11 @@ foreach($q as $r) {
     foreach($hlavicky as $sloupec) {
         echo '<td>' . ($prihlaska[$sloupec] ?? '') . '</td>';
     }
+    $cena = $r['cena'];
+    if($prihlaska['Tričko'] == 'ano')       $cena += 150;
+    if($prihlaska['Ubytování'] == 'ano')    $cena += 50;
     echo '<td>' . $r['aktivity'] . '</td>';
-    echo '<td>' . $r['cena'] . '</td>';
+    echo '<td>' . $cena . '</td>';
     echo '</tr>';
 }
 $tabulka = ob_get_clean();
