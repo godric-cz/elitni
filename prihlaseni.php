@@ -7,6 +7,7 @@ require 'casti/admin-form.php';
 $q = $db->query("
     SELECT
         uzivatel.prihlaska,
+        IF(uzivatel.pohlavi = 'm', 'muž', 'žena') AS pohlavi,
         GROUP_CONCAT(aktivita.nazev SEPARATOR ', ') AS aktivity,
         SUM(aktivita.cena) AS cena
     FROM uzivatel
@@ -28,6 +29,7 @@ foreach($q as $r) {
     $cena = $r['cena'];
     if($prihlaska['Tričko'] == 'ano')       $cena += 150;
     if($prihlaska['Ubytování'] == 'ano')    $cena += 50;
+    echo '<td>' . $r['pohlavi'] . '</td>';
     echo '<td>' . $r['aktivity'] . '</td>';
     echo '<td>' . $cena . '</td>';
     echo '</tr>';
@@ -44,6 +46,7 @@ $tabulka = ob_get_clean();
 <table>
     <tr>
         <th><?=implode('</th><th>', $hlavicky)?></th>
+        <th>Pohlaví</th>
         <th>Aktivity</th>
         <th>Platba</th>
     </tr>
