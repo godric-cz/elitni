@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/godric-cz/github-deployment.git",
-                "reference": "eb42fd92715c3a47e54512743e1e83a6a14d66c6"
+                "reference": "0ac565934b352b190dc9f45dc7ba62a0b2dc7d3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/godric-cz/github-deployment/zipball/eb42fd92715c3a47e54512743e1e83a6a14d66c6",
-                "reference": "eb42fd92715c3a47e54512743e1e83a6a14d66c6",
+                "url": "https://api.github.com/repos/godric-cz/github-deployment/zipball/0ac565934b352b190dc9f45dc7ba62a0b2dc7d3f",
+                "reference": "0ac565934b352b190dc9f45dc7ba62a0b2dc7d3f",
                 "shasum": ""
             },
             "type": "library",
@@ -28,7 +28,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Deployment with GitHub and pure PHP. No git on server or ftp needed.",
-            "time": "2017-10-18 15:41:48"
+            "time": "2017-10-18 17:25:40"
         },
         {
             "name": "michelf/php-markdown",
