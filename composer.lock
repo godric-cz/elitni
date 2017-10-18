@@ -4,8 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "882746e794bd83714ae48a875b75e20d",
+    "content-hash": "3f2be2e4dc94236d69db608fc70d4bab",
     "packages": [
+        {
+            "name": "godric/github-deployment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/godric-cz/github-deployment.git",
+                "reference": "eb42fd92715c3a47e54512743e1e83a6a14d66c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/godric-cz/github-deployment/zipball/eb42fd92715c3a47e54512743e1e83a6a14d66c6",
+                "reference": "eb42fd92715c3a47e54512743e1e83a6a14d66c6",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Godric\\GithubDeployment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Deployment with GitHub and pure PHP. No git on server or ftp needed.",
+            "time": "2017-10-18 15:41:48"
+        },
         {
             "name": "michelf/php-markdown",
             "version": "1.7.0",
@@ -61,7 +85,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "godric/github-deployment": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
