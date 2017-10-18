@@ -1,7 +1,5 @@
 <?php
 
-// test nasazování přes github
-
 require 'src/_zavadec.php';
 
 require 'casti/admin-form.php';
