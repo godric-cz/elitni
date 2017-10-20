@@ -102,7 +102,7 @@ class Aktivita extends DbObject {
     function prihlas(Uzivatel $u): void {
         if(!$this->volnoPro($u))            throw new Plno;
         if(!$u->maVolnoNa($this))           throw new PrekrytiAktivit;
-        if($u->prihlasenoAktivit() >= 2)    throw new PrekrocenPocetAktivit;
+        //if($u->prihlasenoAktivit() >= 2)    throw new PrekrocenPocetAktivit;
 
         $this->db->query(
             'INSERT INTO prihlasen(uzivatel_id, aktivita_id) VALUES (?, ?)',
