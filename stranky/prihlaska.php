@@ -102,47 +102,51 @@ if(post('prihlasit')) {
                             Ne
                         </label>
                     </div>
-                    <div class="polozka vyber">
-                        Máte zájem o tričko? (<a href="soubory/tricko.jpg" target="_blank">náhled</a>)<br>
-                        <label>
-                            <input type="radio" name="polozky[Tričko]" value="ano" checked="true">
-                            <div class="pseudoinput"></div>
-                            Ano
-                        </label>
-                        <label>
-                            <input type="radio" name="polozky[Tričko]" value="ne">
-                            <div class="pseudoinput"></div>
-                            Ne
-                        </label>
-                    </div>
-                    <div class="polozka vyber">
-                        Vaše konfekční velikost<br>
-                        <label>
-                            <input type="radio" name="polozky[Velikost]" value="S">
-                            <div class="pseudoinput"></div>
-                            S
-                        </label>
-                        <label>
-                            <input type="radio" name="polozky[Velikost]" value="M">
-                            <div class="pseudoinput"></div>
-                            M
-                        </label>
-                        <label>
-                            <input type="radio" name="polozky[Velikost]" value="L">
-                            <div class="pseudoinput"></div>
-                            L
-                        </label>
-                        <label>
-                            <input type="radio" name="polozky[Velikost]" value="XL">
-                            <div class="pseudoinput"></div>
-                            XL
-                        </label>
-                        <label>
-                            <input type="radio" name="polozky[Velikost]" value="XXL">
-                            <div class="pseudoinput"></div>
-                            XXL
-                        </label>
-                    </div>
+                    <?php if($GLOBALS['CONFIG']['lzeObjednatTricko']) { ?>
+                        <div class="polozka vyber">
+                            Máte zájem o tričko? (<a href="soubory/tricko.jpg" target="_blank">náhled</a>)<br>
+                            <label>
+                                <input type="radio" name="polozky[Tričko]" value="ano" checked="true">
+                                <div class="pseudoinput"></div>
+                                Ano
+                            </label>
+                            <label>
+                                <input type="radio" name="polozky[Tričko]" value="ne">
+                                <div class="pseudoinput"></div>
+                                Ne
+                            </label>
+                        </div>
+                        <div class="polozka vyber">
+                            Vaše konfekční velikost<br>
+                            <label>
+                                <input type="radio" name="polozky[Velikost]" value="S">
+                                <div class="pseudoinput"></div>
+                                S
+                            </label>
+                            <label>
+                                <input type="radio" name="polozky[Velikost]" value="M">
+                                <div class="pseudoinput"></div>
+                                M
+                            </label>
+                            <label>
+                                <input type="radio" name="polozky[Velikost]" value="L">
+                                <div class="pseudoinput"></div>
+                                L
+                            </label>
+                            <label>
+                                <input type="radio" name="polozky[Velikost]" value="XL">
+                                <div class="pseudoinput"></div>
+                                XL
+                            </label>
+                            <label>
+                                <input type="radio" name="polozky[Velikost]" value="XXL">
+                                <div class="pseudoinput"></div>
+                                XXL
+                            </label>
+                        </div>
+                    <?php } else { ?>
+                        <input type="hidden" name="polozky[Tričko]" value="ne">
+                    <?php } ?>
                     <div class="polozka vyber">
                         Jste<br>
                         <label>

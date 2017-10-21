@@ -12,4 +12,5 @@ return [
     'hesloAdmin'=>  'tak určitě',
     'klicAdmin' =>  'tT6oGj9KcufqHYxj',
     'klicNasad' =>  'ffyIyYHlLZFVfO8f',
+    'lzeObjednatTricko' => false,
 ];
