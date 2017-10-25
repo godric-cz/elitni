@@ -92,7 +92,7 @@ function zobraz_aktivitu($aktivita, $delka, $blok, $uzivatel) {
 
     ?>
         <td colspan="<?=$delka?>">
-            <?=$aktivita->nazev()?>
+            <a href="hra/<?=$aktivita->id()?>" class="hraOdkaz"><?=$aktivita->nazev()?></a>
             <?=$extra?>
             <?php if($uzivatel) zobraz_prihlasovani($aktivita, $uzivatel); ?>
         </td>

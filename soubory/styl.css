@@ -91,6 +91,8 @@ em { color: #ffffff; font-style: normal; }
 .program col { background-color: #c5b178; }
 .program col:nth-child(even) { background-color: #e9d5a2; }
 .program td.prazdna { background-color: #6f6f6f; }
+.program .hraOdkaz { color: #000; }
+.program .hraOdkaz:hover { opacity: 0.8; text-decoration: none; font-size: 24px; }
 .program form { display: block; }
 .program form input[type=submit] { background: none; border: 0; padding: 0; margin: 0; color: #fff; font: inherit; cursor: pointer; }
 
