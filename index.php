@@ -45,7 +45,7 @@ $httpRoot = str_repeat('../', $url->zanoreni());
     <base href="<?=$httpRoot?>"> <!-- pozor na pořadí -->
     <script src="soubory/pohyb-menu.js"></script>
     <script src="soubory/scroll-sneak.js"></script>
-    <link rel="stylesheet" type="text/css" href="soubory/styl.css?v3">
+    <link rel="stylesheet" type="text/css" href="soubory/styl.css?v4">
     <link rel="icon" href="soubory/diamond.png" type="image/png" sizes="16x16">
     <meta property="og:url"             content="http://festivalelitnichlarpu.vip">
     <meta property="og:title"           content="Festival elitních larpů">
