@@ -6,7 +6,7 @@ $hra=Aktivita::zId($id);
 
 <div class="pruh obrazekHra" style="height: 300px; background-image: url(soubory/hry/<?=$id?>.jpg);"></div>
 <div class="pruh">
-  <div class="obsah">
+  <div class="obsah hra">
     <div class=hraPredchozi>
       <a href="./hra/<?=$hra->aktivitaPredchozi()->id()?>">
         &laquo Předchozí: <?=$hra->aktivitaPredchozi()->nazev()?>
@@ -42,10 +42,18 @@ $hra=Aktivita::zId($id);
 
     <div class=hraDetail>
       <table>
-        <tr>
-          <td>Uvádí:</td>
-          <td><?=$hra->uvadec()?></td>
-        </tr>
+          <tr>
+            <td>Dress code:</td>
+            <td><?=$hra->kostym()?></td>
+          </tr>
+          <tr>
+            <td>Místo hry:</td>
+            <td><a href="<?=$hra->mapa()?>" target="_blank"><?=$hra->misto()?></a></td>
+          </tr>
+          <tr>
+              <td class="uvadec">Uvádí:</td>
+              <td class="uvadec"><?=$hra->uvadec()?></td>
+          </tr>
       </table>
 
       <a href="<?=$hra->larpdb()?>" target="_blank">

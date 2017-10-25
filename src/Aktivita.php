@@ -54,6 +54,10 @@ class Aktivita extends DbObject {
         return $this->konec;
     }
 
+    function kostym(): string {
+        return $this->r['dress_code'];
+    }
+
     function kryjeSe(Aktivita $a): bool {
         return !(
             $a->konec() <= $this->zacatek() ||
@@ -67,6 +71,14 @@ class Aktivita extends DbObject {
 
     function nazev(): string {
         return $this->r['nazev'];
+    }
+
+    function misto(): string {
+        return $this->r['misto'];
+    }
+
+    function mapa(): string {
+        return $this->r['mapa_link'];
     }
 
     function odhlas(Uzivatel $u): void {

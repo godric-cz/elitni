@@ -15,6 +15,9 @@ ADD UNIQUE `mail` (`mail`);
 CREATE TABLE `aktivita` (
   `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nazev` varchar(200) NOT NULL,
+  `misto` varchar(200) NOT NULL,
+  `mapa_link` varchar(600) NOT NULL,
+  `dress_code` varchar(400) NOT NULL,
   `zacatek` timestamp NOT NULL DEFAULT 0,
   `konec` timestamp NOT NULL DEFAULT 0,
   `kapacita_m` int NOT NULL,
