@@ -56,11 +56,11 @@ for ($i=1;$i<=22;$i++) {
     $volne_m=$kapacita_m-$prihlaseni_m;
     if ($volne_m<0) {
             $prihlaseni_u+=abs($volne_m);
-            $volne_m+=$prihlaseni_u;
+            $volne_m+=abs($volne_m);
     }
     if ($volne_f<0) {
             $prihlaseni_u+=abs($volne_f);
-            $volne_f+=$prihlaseni_u;
+            $volne_f+=abs($volne_f);
     }
     $volne_u=$kapacita_u-$prihlaseni_u;
     if (($i!=1)&&($i!=12)&&($volne_u>0||$volne_m>0||$volne_f>0)) {
